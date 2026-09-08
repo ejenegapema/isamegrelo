@@ -96,7 +96,7 @@ if (stripos($request, 'tema') === 0) {
     $endYear   = intval(substr($date_3, -4));
 
     for ($y = $startYear; $y <= $endYear; $y++) {
-        $url  = "http://www.pogodaiklimat.ru/summary.php?y={$y}&id={$station}";
+        $url  = "https://www.pogodaiklimat.ru/summary.php?y={$y}&id={$station}";
         $html = curl_get($url, $cookieJar, $userHeaders);
         $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'CP1251');
 
