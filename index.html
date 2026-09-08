@@ -1027,23 +1027,7 @@ body {
             elements.fromDate.value = fromDate.toISOString().split('T')[0];
         }
         
-        async function fetchKey() {
-            try {
-                const response = await fetch(API_CONFIG.BASE_URL + "key.php", {
-                    credentials: "include"
-                });
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch key: ${response.status}`);
-                }
-                const data = await response.json();
-                API_CONFIG.KEY = data.key;
-                return true;
-            } catch (error) {
-                console.error('Key fetch error:', error);
-                showError('Failed to fetch API key');
-                return false;
-            }
-        }
+        
         
         async function loadStations() {
             try {
