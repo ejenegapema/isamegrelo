@@ -1077,11 +1077,6 @@ body {
         async function loadData() {
             if (isLoading) return;
             
-            if (!API_CONFIG.KEY) {
-                showError('API key not loaded. Please wait and try again.');
-                return;
-            }
-            
             setLoading(true);
             updateHeaderInfo();
             
