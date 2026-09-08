@@ -1644,7 +1644,7 @@ body {
             setDefaultDates();
             setupAutocomplete();
             
-            const [stationsLoaded, keyLoaded] = await Promise.all([
+            const [stationsLoaded] = await Promise.all([
                 loadStations()
             ]);
             
