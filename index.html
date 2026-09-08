@@ -1645,8 +1645,7 @@ body {
             setupAutocomplete();
             
             const [stationsLoaded, keyLoaded] = await Promise.all([
-                loadStations(),
-                fetchKey()
+                loadStations()
             ]);
             
             if (!keyLoaded) {
@@ -1655,12 +1654,6 @@ body {
             }
             
             elements.loadBtn.addEventListener('click', loadData);
-            
-            setTimeout(() => {
-                if (API_CONFIG.KEY) {
-                    loadData();
-                }
-            }, 100);
         }
         
         init();
