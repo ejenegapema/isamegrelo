@@ -63,7 +63,7 @@ if (stripos($request, 'tema') === 0) {
     ];
 
     // Login
-    $loginUrl  = 'http://www.pogodaiklimat.ru/login.php';
+    $loginUrl  = 'https://www.pogodaiklimat.ru/login.php';
     $loginPage = curl_get($loginUrl, $cookieJar, $userHeaders);
 
     $dom = new DOMDocument();
