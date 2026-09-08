@@ -1084,7 +1084,7 @@ body {
                 const to = formatDateForAPI(elements.toDate.value);
                 const station = elements.stationInput.value || '03770';
                 
-                const url = `${API_CONFIG.BASE_URL}data.php?fd=${from.dd}&fm=${from.mm}&fy=${from.yyyy}&ld=${to.dd}&lm=${to.mm}&ly=${to.yyyy}&station=${station}&key=${API_CONFIG.KEY}`;
+                const url = `${API_CONFIG.BASE_URL}data.php?fd=${from.dd}&fm=${from.mm}&fy=${from.yyyy}&ld=${to.dd}&lm=${to.mm}&ly=${to.yyyy}&station=${station}`;
                 
                 const res = await fetch(url);
                 if (!res.ok) {
@@ -1179,15 +1179,11 @@ body {
             setupAutocomplete();
             
             await Promise.all([
-                loadStations(),
-                fetchKey()
+                loadStations()
             ]);
             
             elements.loadBtn.addEventListener('click', loadData);
             
-            if (API_CONFIG.KEY) {
-                loadData();
-            }
         }
         
         init();
