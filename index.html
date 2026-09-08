@@ -1648,11 +1648,6 @@ body {
                 loadStations()
             ]);
             
-            if (!keyLoaded) {
-                showError('Failed to initialize. API key could not be loaded.');
-                return;
-            }
-            
             elements.loadBtn.addEventListener('click', loadData);
         }
         
